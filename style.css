@@ -1414,7 +1414,7 @@ blockquote cite {
   }
 }
 .accordion-button:not(.collapsed)::after {
-  background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+  background-image: url(data:image/svg+xml,%3csvg) xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'; %3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
   transform: rotate(-180deg);
 }
 .accordion-button::after {
@@ -1738,6 +1738,7 @@ blockquote cite {
   cursor: default;
   -webkit-transform: translateY(-40px);
   transform: translateY(-40px);
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition-property: -webkit-transform;
   transition-property: transform;
@@ -2042,7 +2043,7 @@ blockquote cite {
 /* Effet de survol pour les images des produits */
 .product-item .image-holder img {
   transition: transform 0.3s ease;
-  adding: 20px;
+  padding: 20px;
   border-radius: 2px;
   max-height: 500px; /* Réduire la taille du logo */
   height: auto;
@@ -2075,8 +2076,8 @@ blockquote cite {
 }
 .product-item img.product-image {
     background: var(--light-color);
-    border: 1px solid var(--grey-color);
-    border-radius: 6px;
+    /*border: 1px solid var(--grey-color);
+    border-radius: 6px;*/
     padding: 10px;
     cursor: pointer;
     margin-bottom: 20px;
@@ -2324,24 +2325,24 @@ i.icon.icon-arrow-io {
 
 /*----- Testimonials Section
 --------------------------------------------------------------*/
-/* Ajustez le padding pour réduire la taille de la section */
+/* Ajustez le padding pour réduire la taille de la section 
 #testimonials {
-  padding: 50px 0; /* Réduisez les valeurs selon vos besoins */
+  padding: 50px 0; /* Réduisez les valeurs selon vos besoins 
 }
 
-/* Ajustez la hauteur de la section si nécessaire */
+/* Ajustez la hauteur de la section si nécessaire 
 #testimonials {
-  height: 600px;; /* Ajustez selon vos besoins, auto adapte la hauteur au contenu */
+  height: auto; /* Ajustez selon vos besoins, auto adapte la hauteur au contenu 
 }
 
-/* Si une hauteur spécifique est requise */
+/* Si une hauteur spécifique est requise 
 #testimonials {
-  min-height: 10px; /* Par exemple, définissez une hauteur minimale */
+  min-height: 10px; /* Par exemple, définissez une hauteur minimale 
 }
-
+*/
 .background-image-custom {
   background-image: url('back.jpg'); /* Chemin vers l'image de fond */
-  background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la section */
+  background-size: 100% auto; /* Ajuste la taille de l'image pour couvrir toute la section */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-position: center; /* Centre l'image */
   position: relative; /* Nécessaire pour le contenu absolu */
@@ -2366,6 +2367,7 @@ i.icon.icon-arrow-io {
 }
 #testimonials .reviews-content {
     position: relative;
+    padding: -100px 0;
 }
 .review-icon i.icon.icon-right-quote {
     font-size: 9em;
